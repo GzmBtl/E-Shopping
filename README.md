@@ -1,2 +1,2 @@
 # E-Shopping
-Incomplete is a Project I am developing
+This is my project that I am developing
