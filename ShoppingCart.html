@@ -1,0 +1,94 @@
+<style>
+  table{
+    width: 100%;
+    border: 2px solid black;
+    padding: 15px;
+    border-spacing: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: lemonchiffon;
+  }
+
+  th, td {
+    border: 1px solid black;
+  }
+
+   .button {
+     display: inline-block;
+     border-radius: 4px;
+     border: none;
+     color: black;
+     text-align: center;
+     font-size: 14px;
+     width: 120px;
+     height: 60px;
+     transition: all 0.5s;
+     margin-left: 10px;
+   }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -25px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-left: 25px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+
+</style>
+
+<div style="background-image: url('../assets/Photos/backgr3.jpg'); height: 100%">
+
+<div class="btn-group btn-group-justified" style="margin-top: 80px;">
+
+  <button class="button" style="vertical-align:middle" (click)="anaSayfayaGit()"><span class="glyphicon glyphicon-home"> ANASAYFA </span> </button>
+  <!--<gbutton class="button" buttonText="ANASAYFAYA DÖN" (buttonOnclick)="anaSayfayaGit()" buttonBackground="transparent" style="margin-bottom: 20px; vertical-align:middle">
+</gbutton>-->
+</div>
+
+<!-- <div>
+  <gtextarea style="background-color: aqua; margin-top: 50px;margin-left: 20px; " *ngFor="let ul of this.urunlist" [productName]="ul.name"
+   [productCatagory]="ul.category" [productPrice]="ul.price" [productIMG]="ul.img">
+  </gtextarea>
+</div>-->
+
+<div>
+<table class="table table-hover">
+  <tr>
+
+    <th>Ürün Adı</th>
+    <th>Ürün Miktar</th>
+    <th>Ürün Kategori</th>
+    <th>Ürün Fiyat</th>
+  </tr>
+  <tr *ngFor="let ul of this.urunlist" >
+
+    <td  >{{ul.name}}</td>
+    <td  >....</td>
+    <td>{{ul.category}}</td>
+    <td>{{ul.price}}</td>
+   <td> <gbutton buttonText="SİL" (buttonOnclick)="urunuSil(ul)" buttonBackground="tomato" ></gbutton></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align:right"><h4>TOPLAM = {{this.toplamFiyat}}₺ </h4></td>
+  </tr>
+</table>
+</div>
+
+</div>
